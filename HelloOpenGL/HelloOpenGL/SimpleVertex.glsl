@@ -1,6 +1,6 @@
 /* This file is written in GLSL. We are creating our simple Vertex shader here. */
 
-// Declare a variable or name Position of type vec4 (a vector with 4 components)
+// Declare a variable of name Position and type vec4 (a vector with 4 components)
 attribute vec4 Position;
 // Declare a vec4 variable named SourceColor
 attribute vec4 SourceColor;
@@ -8,7 +8,8 @@ attribute vec4 SourceColor;
 // The lack of the attribute keyword means this is an output variable that will be
 // passed to our fragment shader. The varying keyword means it will have to figure
 // out the values for any given 'pixel' by extrapolating from the vertices nearby.
-// As you can imagine this will create gradients between vertices.
+// As you can imagine this will create gradients between vertices if the vertices
+// are different colors.
 varying vec4 DestinationColor;
 
 // This new attribute is uniform, meaning it will be the same value for all vertices.

@@ -261,9 +261,9 @@ const GLubyte Indices[] = {
     // The formula is (x, y, z) for the transform.
     [modelView populateFromTranslation:CC3VectorMake(sin(CACurrentMediaTime()), 0, -7)];
     // Increments rotation 90 degrees every second.
-    _currentRotation += displayLink.duration * 90;
+    _currentRotation += displayLink.duration * 180;
     // We add the rotation to the matrix along the x and y axes.
-    [modelView rotateBy:CC3VectorMake(_currentRotation, _currentRotation, 0)];
+    [modelView rotateBy:CC3VectorMake(0, _currentRotation, _currentRotation)];
     glUniformMatrix4fv(_modelViewUniform, 1, 0, modelView.glMatrix);
     
     // Sets the portion of the view to use for rendering.
@@ -308,13 +308,5 @@ const GLubyte Indices[] = {
     }
     return self;
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 @end
